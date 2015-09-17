@@ -1,0 +1,40 @@
+apply plugin: 'groovy'
+apply plugin: 'java'
+
+sourceSets {
+    main {
+        java {
+            srcDirs = []
+        }
+        groovy {
+            srcDirs = ['src/main/java']
+        }
+    }
+    test {
+        groovy {
+            srcDirs = ['src/test/java']
+        }
+    }
+}
+
+dependencies {
+    compile "org.codehaus.groovy:groovy-all:2.3.1"
+    compile group: 'com.datastreams', name: 'common-ui', version: '1.2.1-SNAPSHOT'
+    compile "org.mybatis:mybatis-spring:1.2.0"
+    compile "org.mybatis:mybatis:3.1.0"
+    compile "org.hibernate:hibernate-validator:5.1.3.Final"
+    compile "org.quartz-scheduler:quartz:2.2.0"
+    compile "org.aspectj:aspectjrt:1.7.2"
+    compile "commons-net:commons-net:3.2"
+    compile "j2ssh:j2ssh-core:0.2.9"
+    compile "org.springframework:spring-beans:4.1.6.RELEASE"
+    compile "org.springframework:spring-context:4.1.6.RELEASE"
+    compile "org.springframework:spring-core:4.1.6.RELEASE"
+    compile "org.springframework.security:spring-security-config:3.2.3.RELEASE"
+    compile "org.springframework.security:spring-security-cas-client:3.0.8.RELEASE"
+    compile "org.apache.httpcomponents:httpclient:4.2"
+    compile "com.oracle:ojdbc6:11.2.0.1.0"
+ 
+	
+
+}

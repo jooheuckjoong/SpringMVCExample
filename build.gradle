@@ -1,0 +1,39 @@
+apply plugin: 'java'
+
+buildscript {
+    repositories {
+
+        maven {
+            url "http://61.250.197.68/nexus/content/groups/public"
+        }
+    }
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:1.2.4.RELEASE"
+        classpath 'org.springframework:springloaded:1.2.3.RELEASE'
+    }
+}
+
+subprojects {
+	apply plugin: 'java'
+	apply plugin: 'war'
+	apply plugin: 'jetty'
+	apply plugin: 'groovy'
+
+	[compileJava, compileGroovy, compileTestJava, compileTestGroovy]*.options*.encoding = 'UTF-8'
+  
+		// JDK 7
+	sourceCompatibility = 1.7
+	targetCompatibility = 1.7
+
+
+
+
+	repositories {
+	   mavenCentral()
+	}
+
+
+
+}
+
+
