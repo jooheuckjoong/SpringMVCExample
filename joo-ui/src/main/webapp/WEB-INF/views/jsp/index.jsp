@@ -30,6 +30,7 @@
 	</div>
 </div>
 
+<h2><b>${uimsg}</b></h2>
 
 
 <spring:url value="/resources/core/css/hello.js" var="coreJs" />

@@ -29,5 +29,10 @@ public class HelloWorldService {
 		}
 		
 	}
+	public String getUI(String uiname){
+		logger.debug("getUI() is executed! $name:{}",uiname);
+	
+		return "JOO UI "+uiname+"update";
+	}
 
 }

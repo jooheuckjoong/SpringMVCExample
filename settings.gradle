@@ -1,2 +1,3 @@
-include "joo-server"
-include "joo-ui"
+rootProject.name='datastream-begining-gradle'
+String[] modules=['joo-server','joo-ui']
+include modules

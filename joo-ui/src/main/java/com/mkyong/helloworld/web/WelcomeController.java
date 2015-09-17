@@ -50,4 +50,23 @@ public class WelcomeController {
 
 	}
 
+	@RequestMapping(value = "/ui/{uiname:.+}", method = RequestMethod.GET)
+	public ModelAndView helloui(@PathVariable("uiname") String uiname) {
+
+		logger.debug("hello() is executed - $uiname {}", uiname);
+
+		ModelAndView model = new ModelAndView();
+		model.setViewName("index");
+		
+		//model.addObject("title", helloWorldService.getTitle(name));
+		//model.addObject("msg", helloWorldService.getDesc());
+		model.addObject("uimsg", helloWorldService.getUI(uiname));
+
+
+		return model;
+
+	}
+
+
+
 }
