@@ -1,1 +1,2 @@
-include "joo-server","joo-ui"
+include "joo-server"
+include "joo-ui"

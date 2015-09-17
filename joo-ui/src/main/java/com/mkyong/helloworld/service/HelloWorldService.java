@@ -14,7 +14,7 @@ public class HelloWorldService {
 
 		logger.debug("getDesc() is executed!");
 
-		return "Gradle + Spring MVC Hello World Example";
+		return "Data streams Hello";
 
 	}
 
@@ -23,7 +23,7 @@ public class HelloWorldService {
 		logger.debug("getTitle() is executed! $name : {}", name);
 
 		if(StringUtils.isEmpty(name)){
-			return "Hello World";
+			return "Hello World ~";
 		}else{
 			return "Hello " + name;
 		}

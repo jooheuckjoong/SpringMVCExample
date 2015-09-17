@@ -1,4 +1,8 @@
 apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'eclipse-wtp'
+apply plugin: 'jetty'
+
 
 buildscript {
     repositories {
@@ -33,7 +37,14 @@ subprojects {
 	}
 
 
-
+	dependencies{
+		testCompile 'junit:junit:4.8.2'
+	}
 }
 
 
+
+	test{
+		maxParallelForks=5
+		forkEvery=50
+	}

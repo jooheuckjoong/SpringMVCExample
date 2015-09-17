@@ -1,4 +1,8 @@
 apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'eclipse-wtp'
+apply plugin: 'jetty'
+
 
 buildscript {
     repositories {
@@ -32,16 +36,14 @@ subprojects {
 	   mavenCentral()
 	}
 
-	dependencies {
- 
-		         compile "org.springframework.boot:spring-boot-starter-web"
-			 compile "org.springframework.boot:spring-boot-starter-freemarker"
-			 compile "org.springframework.boot:spring-boot-starter-jdbc"
-			 compile "org.springframework.boot:spring-boot-starter-actuator"
-			 compile "org.springframework.boot:spring-boot-starter-aop"
+	dependencies{
+		testCompile 'junit:junit:4.8.2'
 	}
-
-
 }
 
 
+
+test{
+	maxParallelForks=5
+		forkEvery=50
+}
