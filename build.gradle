@@ -8,6 +8,7 @@ buildscript {
     dependencies {
         classpath "org.springframework.boot:spring-boot-gradle-plugin:1.2.4.RELEASE"
         classpath 'org.springframework:springloaded:1.2.3.RELEASE'
+	
     }
 }
 
@@ -16,6 +17,7 @@ subprojects {
 	apply plugin: 'war'
 	apply plugin: 'jetty'
 	apply plugin: 'groovy'
+	
 
 	[compileJava, compileGroovy, compileTestJava, compileTestGroovy]*.options*.encoding = 'UTF-8'
   
@@ -28,8 +30,10 @@ subprojects {
 	}
 
 	dependencies {
+	providedCompile 'javax.servlet:servlet-api:2.5' //servlet
         compile 'org.slf4j:slf4j-api:1.7.5'
         testCompile "junit:junit:4.11"
+
 	}
 
 }

@@ -1,0 +1,7 @@
+apply plugin:'java'
+
+dependencies {
+	
+	compile 'org.springframework:spring-webmvc:4.1.6.RELEASE'
+	compile 'javax.servlet:jstl:1.2'
+}

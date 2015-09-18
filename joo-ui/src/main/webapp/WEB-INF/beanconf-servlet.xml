@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!-- 
+	빈 설정문서::
+	1)api/라이브러리 빈을 등록. . . . .HandlerMapping, ViewResolver,  DispatcherServlet(구상객체가아니다.)여긴controller만등록
+ 	2)User Definition Class(Bean)..... HelloController
+ -->
+ 
+ <!-- HandlerMapping 등록 -->
+ <bean id="handlerMapping" class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"></bean>
+
+<!-- ViewResolver 등록 -->
+<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+			<property name="prefix" value="view/" /> 
+			<property name="suffix" value=".jsp"/>
+			<!-- view 폴더안에 .jsp로끝나는   -->
+</bean>
+
+<bean id="viewResolver1" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+			<property name="prefix" value="WEB-INF/" /> 
+			<property name="suffix" value=".html"/>
+			<!-- view 폴더안에 .html로끝나는   -->
+</bean>
+
+<!--내가만든 빈등록  -->
+<bean name="/hello.do" class="controller.HelloController" /> <!-- 핸들러매핑이 name정보를보고 class를 생성한다. -->
+
+<bean name="/form.do" class="controller.FormController" />
+</beans>
+
+
